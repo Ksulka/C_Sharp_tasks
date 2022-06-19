@@ -82,7 +82,7 @@ else Console.Write("Данного числа нет  ");
 // [1 2 3 4 5] -> 5 8 3
 // [6 7 3 6] -> 36 21
 
-Console.WriteLine("Введите количество элемонтов для задания массива  ");
+Console.WriteLine("Введите количество элементов для задания массива  ");
 int L = int.Parse(Console.ReadLine());
 int[]Arr2 = new int[L];
 for(int w = 0; w < Arr2.Length; w++)
@@ -103,12 +103,15 @@ Print(ArrMult);
 }
 else
 {
-int[]ArrMult = new int[(L-1)/2];
+int[]ArrMult = new int[1+(L-1)/2];
 int b=L-1;
+ArrMult[(L-1)/2] = Arr2[(L-1)/2];
 for(int n1 = 0; n1 < (L-1)/2 ; n1++)
 {
     ArrMult[n1] = Arr2[n1]*Arr2[b];
     b--;
+    
 }
+
 Print(ArrMult);
 }
