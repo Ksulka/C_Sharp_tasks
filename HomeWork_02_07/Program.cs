@@ -97,8 +97,10 @@ Console.WriteLine();
 // находить произведение двух матриц.
 
 int[,] matrix1 = (CreateArray(5, 6));
+Console.WriteLine("Первая матрица");
 PrintArray(matrix1);
 Console.WriteLine("");
+Console.WriteLine("Вторая матрица");
 int[,] matrix2 = (CreateArray(6, 5));
 PrintArray(matrix2);
 Console.WriteLine("");
@@ -110,10 +112,14 @@ for (int i = 0; i < matrix1.GetLength(0); i++)
 
     for (int j = 0; j < matrix2.GetLength(1); j++)
     {
-        matrix[i, j] = matrix1[i, j] * matrix2[j, i];
+       for (int k=0; k < matrix2.GetLength(0); k++)
+        {
+            matrix[i, j] += matrix1[i, k] * matrix2[k, j];
+        }
     }
 
 }
+Console.WriteLine("Произведение матриц");
 PrintArray(matrix);
 Console.WriteLine("");
 
